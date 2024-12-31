@@ -16,7 +16,7 @@ public class ThankYouPage extends BasePage {
 	@FindBy(xpath = "//span[@class='title']")
 	WebElement thankYouPageTitle;
 	
-	@FindBy(xpath = "//h2[normalize-space()='Thank you for your order!']")
+	@FindBy(xpath = "//h2[text()='Thank you for your order!']")
 	WebElement confirmationMessage;
 	
 	public boolean thankYouPageDisplayStatus () {
@@ -31,7 +31,8 @@ public class ThankYouPage extends BasePage {
 	public boolean displayStatus () {
 		try {
 			Thread.sleep(4000);
-			return confirmationMessage.isDisplayed();
+			boolean messageStatus =  confirmationMessage.isDisplayed();
+			return messageStatus;
 		} catch (Exception e) {
 			return false;
 		}
