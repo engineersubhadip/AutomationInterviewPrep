@@ -3,17 +3,17 @@
 
 <suite name="SingletonSuite" thread-count="2" parallel="tests">
 
-	  <test name="Chrometest">
+		<test name="Chrometest">
 		  	<parameter name="browser" value="chrome"/>
-		  	<parameter name="url" value="https://www.google.com/"/>
+			<parameter name="url" value="https://www.google.com/"/>
 		    <classes>
 		      <class name="SingletonDesign.Test1"/>
 		    </classes>
-	  </test>
+	   </test>
   
 	   <test name="Edgetest">
-		   <parameter name="browser" value="edge"/>
-		   <parameter name="url" value="https://www.udemy.com/"/>
+			<parameter name="browser" value="edge"/>
+		    <parameter name="url" value="https://www.udemy.com/"/>
 		    <classes>
 		      <class name="SingletonDesign.Test2"/>
 		    </classes>

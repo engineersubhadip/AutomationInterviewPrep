@@ -1,0 +1,40 @@
+	For a Single threaded app.
+
+1. Inside the Run method the thread, we are creating object of testCase1 and 2.
+
+2. First we are creating the object of testCase1 inside the Thread T.
+
+3. Using that object we are invoking the BaseTest. 
+
+	This will create shared singleton driver instance. WHICH WILL BE ALIVE TILL THE THREAD IS ALIVE.
+
+4. Using that object, we are invoking the set driver.
+
+	"tLocal" is a static data member. Meaning this tLocal object will be shared across multiple threads and multiple test case objects.
+	Meaning all the test case objects across all the threads will refer to the same tLocal object.
+	But one thread cannot access the value of the other thread.
+
+5. tLocal found that for current Thread (T) we have not local driver set. So, it sets the local driver for the current thread
+   
+6. getDriver will return the same driver instance created at step 5. Because the same tLocal found that tLocal.get() for Thread T has
+   already been initialized.
+   
+7. After all the execution is done, @AfterClass gets invoked. Here using the shared singleton driver object, we are invoking the quitBrowser()
+   Inside quitBrowser(), for Thread T we are fetching the local driver instance (created at step 5) and closing the Browser.
+   And we are removing the Mapping between the current thread and local driver instance.
+   MEANING THREAD T HAS NO MAPPING NOW.
+   
+8. 	Inside the run() of the thread (T) we are also creating the object of TEST CASE 2.
+
+9. Using that object we are invoking the @BeforeClass.
+
+10. Inside BeforeClass, we are again trying to create another object for the Singleton Class. But since this object has already been created
+	in the previous run, NO NEW OBJECT IS CREATED.
+	
+11. Using the same object reference, we are again trying to set the driver.
+
+12. Now since, in the previous step, we have removed the mapping of THREAD T and driver instance, 
+	WE WILL AGAIN SET A LOCAL DRIVER FOR THREAD T. 
+	AND THE SAME PROCESS CONTINUES.
+	
+	THIS EXACT SAME SCENARIO HAPPENS IN CONCURRENT THREADS DURING PARALLEL TESTING.
