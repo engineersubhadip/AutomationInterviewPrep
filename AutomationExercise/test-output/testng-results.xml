@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-25T15:29:07 IST" name="Default suite" finished-at="2025-01-25T15:29:54 IST" duration-ms="46711">
+    <groups>
+    </groups>
+    <test started-at="2025-01-25T15:29:07 IST" name="Default test" finished-at="2025-01-25T15:29:54 IST" duration-ms="46711">
+      <class name="testCases.TestCase1_RegisterUser">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TestCase1_RegisterUser@5023bb8b]" started-at="2025-01-25T15:29:07 IST" name="setUp" finished-at="2025-01-25T15:29:14 IST" duration-ms="7253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase1_RegisterUser()[pri:0, instance:testCases.TestCase1_RegisterUser@5023bb8b]" started-at="2025-01-25T15:29:14 IST" name="testCase1_RegisterUser" finished-at="2025-01-25T15:29:53 IST" duration-ms="39235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1_RegisterUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase1_RegisterUser@5023bb8b]" started-at="2025-01-25T15:29:53 IST" name="tearDown" finished-at="2025-01-25T15:29:54 IST" duration-ms="185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase1_RegisterUser -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
