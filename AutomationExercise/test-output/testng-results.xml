@@ -1,25 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-25T15:29:07 IST" name="Default suite" finished-at="2025-01-25T15:29:54 IST" duration-ms="46711">
+  <suite started-at="2025-01-26T12:34:29 IST" name="MasterSuite" finished-at="2025-01-26T12:36:39 IST" duration-ms="130224">
     <groups>
     </groups>
-    <test started-at="2025-01-25T15:29:07 IST" name="Default test" finished-at="2025-01-25T15:29:54 IST" duration-ms="46711">
+    <test started-at="2025-01-26T12:34:29 IST" name="ChromeTest" finished-at="2025-01-26T12:36:28 IST" duration-ms="118848">
       <class name="testCases.TestCase1_RegisterUser">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.TestCase1_RegisterUser@5023bb8b]" started-at="2025-01-25T15:29:07 IST" name="setUp" finished-at="2025-01-25T15:29:14 IST" duration-ms="7253" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase1_RegisterUser@5cde6747]" started-at="2025-01-26T12:34:29 IST" name="setUp" finished-at="2025-01-26T12:34:36 IST" duration-ms="7510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testCase1_RegisterUser()[pri:0, instance:testCases.TestCase1_RegisterUser@5023bb8b]" started-at="2025-01-25T15:29:14 IST" name="testCase1_RegisterUser" finished-at="2025-01-25T15:29:53 IST" duration-ms="39235" status="PASS">
+        <test-method signature="testCase1_RegisterUser()[pri:0, instance:testCases.TestCase1_RegisterUser@5cde6747]" started-at="2025-01-26T12:34:36 IST" name="testCase1_RegisterUser" finished-at="2025-01-26T12:35:24 IST" duration-ms="48060" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase1_RegisterUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase1_RegisterUser@5023bb8b]" started-at="2025-01-25T15:29:53 IST" name="tearDown" finished-at="2025-01-25T15:29:54 IST" duration-ms="185" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase1_RegisterUser@5cde6747]" started-at="2025-01-26T12:35:24 IST" name="tearDown" finished-at="2025-01-26T12:35:25 IST" duration-ms="506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.TestCase1_RegisterUser -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="testCases.TestCase4_LogoutUser">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase4_LogoutUser@2d96543c]" started-at="2025-01-26T12:35:35 IST" name="setUp" finished-at="2025-01-26T12:35:49 IST" duration-ms="14054" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase4_LogoutUser()[pri:0, instance:testCases.TestCase4_LogoutUser@2d96543c]" started-at="2025-01-26T12:35:49 IST" name="testCase4_LogoutUser" finished-at="2025-01-26T12:36:04 IST" duration-ms="14932" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase4_LogoutUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase4_LogoutUser@2d96543c]" started-at="2025-01-26T12:36:04 IST" name="tearDown" finished-at="2025-01-26T12:36:05 IST" duration-ms="366" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase4_LogoutUser -->
+      <class name="testCases.TestCase5_RegisterUserWithExistingEmail">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase5_RegisterUserWithExistingEmail@73a2e526]" started-at="2025-01-26T12:36:05 IST" name="setUp" finished-at="2025-01-26T12:36:16 IST" duration-ms="11002" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase5_RegisterUserWithExistingEmail()[pri:0, instance:testCases.TestCase5_RegisterUserWithExistingEmail@73a2e526]" started-at="2025-01-26T12:36:16 IST" name="testCase5_RegisterUserWithExistingEmail" finished-at="2025-01-26T12:36:27 IST" duration-ms="11676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase5_RegisterUserWithExistingEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase5_RegisterUserWithExistingEmail@73a2e526]" started-at="2025-01-26T12:36:27 IST" name="tearDown" finished-at="2025-01-26T12:36:28 IST" duration-ms="340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase5_RegisterUserWithExistingEmail -->
+      <class name="testCases.TestCase3_LoginWithIncorrectCreds">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase3_LoginWithIncorrectCreds@1fdf1c5]" started-at="2025-01-26T12:35:25 IST" name="setUp" finished-at="2025-01-26T12:35:31 IST" duration-ms="6427" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase3_LoginWithIncorrectCreds()[pri:0, instance:testCases.TestCase3_LoginWithIncorrectCreds@1fdf1c5]" started-at="2025-01-26T12:35:31 IST" name="testCase3_LoginWithIncorrectCreds" finished-at="2025-01-26T12:35:35 IST" duration-ms="3620" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase3_LoginWithIncorrectCreds -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase3_LoginWithIncorrectCreds@1fdf1c5]" started-at="2025-01-26T12:35:35 IST" name="tearDown" finished-at="2025-01-26T12:35:35 IST" duration-ms="265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase3_LoginWithIncorrectCreds -->
+    </test> <!-- ChromeTest -->
+    <test started-at="2025-01-26T12:34:29 IST" name="EdgeTest" finished-at="2025-01-26T12:36:39 IST" duration-ms="130224">
+      <class name="testCases.TestCase1_RegisterUser">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase1_RegisterUser@4535b6d5]" started-at="2025-01-26T12:34:29 IST" name="setUp" finished-at="2025-01-26T12:34:37 IST" duration-ms="8488" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase1_RegisterUser()[pri:0, instance:testCases.TestCase1_RegisterUser@4535b6d5]" started-at="2025-01-26T12:34:37 IST" name="testCase1_RegisterUser" finished-at="2025-01-26T12:35:29 IST" duration-ms="51843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1_RegisterUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase1_RegisterUser@4535b6d5]" started-at="2025-01-26T12:35:29 IST" name="tearDown" finished-at="2025-01-26T12:35:30 IST" duration-ms="683" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase1_RegisterUser -->
+      <class name="testCases.TestCase4_LogoutUser">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase4_LogoutUser@4372b9b6]" started-at="2025-01-26T12:35:54 IST" name="setUp" finished-at="2025-01-26T12:36:05 IST" duration-ms="11767" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase4_LogoutUser()[pri:0, instance:testCases.TestCase4_LogoutUser@4372b9b6]" started-at="2025-01-26T12:36:05 IST" name="testCase4_LogoutUser" finished-at="2025-01-26T12:36:23 IST" duration-ms="17623" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase4_LogoutUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase4_LogoutUser@4372b9b6]" started-at="2025-01-26T12:36:23 IST" name="tearDown" finished-at="2025-01-26T12:36:24 IST" duration-ms="517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase4_LogoutUser -->
+      <class name="testCases.TestCase5_RegisterUserWithExistingEmail">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase5_RegisterUserWithExistingEmail@232a7d73]" started-at="2025-01-26T12:36:24 IST" name="setUp" finished-at="2025-01-26T12:36:33 IST" duration-ms="9750" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase5_RegisterUserWithExistingEmail()[pri:0, instance:testCases.TestCase5_RegisterUserWithExistingEmail@232a7d73]" started-at="2025-01-26T12:36:33 IST" name="testCase5_RegisterUserWithExistingEmail" finished-at="2025-01-26T12:36:39 IST" duration-ms="5338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase5_RegisterUserWithExistingEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase5_RegisterUserWithExistingEmail@232a7d73]" started-at="2025-01-26T12:36:39 IST" name="tearDown" finished-at="2025-01-26T12:36:39 IST" duration-ms="405" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase5_RegisterUserWithExistingEmail -->
+      <class name="testCases.TestCase3_LoginWithIncorrectCreds">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testCases.TestCase3_LoginWithIncorrectCreds@1ecee32c]" started-at="2025-01-26T12:35:30 IST" name="setUp" finished-at="2025-01-26T12:35:44 IST" duration-ms="14148" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCase3_LoginWithIncorrectCreds()[pri:0, instance:testCases.TestCase3_LoginWithIncorrectCreds@1ecee32c]" started-at="2025-01-26T12:35:44 IST" name="testCase3_LoginWithIncorrectCreds" finished-at="2025-01-26T12:35:53 IST" duration-ms="9188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase3_LoginWithIncorrectCreds -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TestCase3_LoginWithIncorrectCreds@1ecee32c]" started-at="2025-01-26T12:35:53 IST" name="tearDown" finished-at="2025-01-26T12:35:54 IST" duration-ms="414" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestCase3_LoginWithIncorrectCreds -->
+    </test> <!-- EdgeTest -->
+  </suite> <!-- MasterSuite -->
 </testng-results>

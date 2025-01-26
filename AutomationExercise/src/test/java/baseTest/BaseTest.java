@@ -7,22 +7,27 @@ import java.util.Properties;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
+import threadSafe.DriverManagement;
 
 public class BaseTest {
 	protected WebDriver driver;
 	protected Properties properties;
-
+	private DriverManagement driverManagement;
 	@BeforeClass
-//	@Parameters({"browser"})
-	public void setUp() throws IOException {
+	@Parameters({"browser"})
+	public void setUp(String browserName) throws IOException {
 		
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
 		properties = new Properties();
 		properties.load(file);
-		driver = new ChromeDriver();
+		driverManagement = DriverManagement.getInstance();
+		driverManagement.setDriver(browserName);
+		
+		driver = driverManagement.getDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().setSize(new Dimension(1440, 900));
@@ -32,7 +37,7 @@ public class BaseTest {
 
 	@AfterClass
 	public void tearDown() {
-		driver.quit();
+		driverManagement.quitBrowser();
 	}
 
 	public String generateRandomString() {

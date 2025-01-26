@@ -19,8 +19,7 @@ public class TestCase3_LoginWithIncorrectCreds extends BaseTest {
 				System.out.println("Home Page cannot be loaded.");
 				Assert.fail();
 			}
-			homePage.clickSignupLoginLink();
-			
+			homePage.clickSignupLoginLink();	
 			
 			SignUpLoginPage signUpLoginPage = new SignUpLoginPage(driver);
 			boolean signUpLoginPageStatus = signUpLoginPage.pageStatus(properties.getProperty("signUpLoginPageTitle"));

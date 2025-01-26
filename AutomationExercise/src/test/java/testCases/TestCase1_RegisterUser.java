@@ -130,6 +130,8 @@ public class TestCase1_RegisterUser extends BaseTest {
 				Assert.fail();
 			}
 			accountCreatedPage.clickContinueButton();
+			System.out.println("Test Case Execution Success. All Validations successfull.");
+			Assert.assertTrue(true);
 		} catch (Exception e) {
 			System.out.println("Test Case 1 Execution Failed "+e.getMessage());
 			Assert.fail();

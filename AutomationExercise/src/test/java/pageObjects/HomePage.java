@@ -19,8 +19,15 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//ul[@class='nav navbar-nav']/li[last()]")
 	WebElement loggedInUser;
 	
+	@FindBy(xpath="//a[contains(@href,'logout')]")
+	WebElement logoutLink;
+	
 	public void clickSignupLoginLink() {
 		this.signUpLoginLink.click();
+	}
+	
+	public void clickLogoutLink() {
+		this.logoutLink.click();
 	}
 	
 	public void clickDeleteAccountButton() {
@@ -30,6 +37,7 @@ public class HomePage extends BasePage {
 	public boolean checkUserLoginStatus(String userString) {
 		String currentValue = this.loggedInUser.getText();
 		currentValue = currentValue.trim();
+		userString = userString.trim();
 		if(currentValue.equals(userString)) {
 			return true;
 		}
