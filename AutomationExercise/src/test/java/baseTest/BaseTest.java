@@ -12,18 +12,25 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import threadSafe.DriverManagement;
+import threadSafe.PropertyManagement;
 
 public class BaseTest {
 	protected WebDriver driver;
 	protected Properties properties;
 	private DriverManagement driverManagement;
+	private PropertyManagement propertyManagement;
+	
 	@BeforeClass
 	@Parameters({"browser"})
 	public void setUp(String browserName) throws IOException {
 		
-		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
-		properties = new Properties();
-		properties.load(file);
+		// Loading the Properties File :-
+		propertyManagement = PropertyManagement.getInstance();
+		String filePath = System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties";
+		propertyManagement.setProperty(filePath);
+		properties = propertyManagement.getProperty();
+		
+		//Loading the Driver :-
 		driverManagement = DriverManagement.getInstance();
 		driverManagement.setDriver(browserName);
 		
@@ -38,6 +45,7 @@ public class BaseTest {
 	@AfterClass
 	public void tearDown() {
 		driverManagement.quitBrowser();
+		propertyManagement.quitProperty();
 	}
 
 	public String generateRandomString() {
