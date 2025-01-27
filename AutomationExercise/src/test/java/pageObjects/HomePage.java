@@ -24,6 +24,9 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//a[contains(@href,'contact')]")
 	WebElement contactUsLink;
+	
+	@FindBy(xpath="//li/a[contains(@href,'test_cases')]")
+	WebElement testCaseLink;
 
 	public void clickContactUsLink() {
 		this.contactUsLink.click();
@@ -39,6 +42,10 @@ public class HomePage extends BasePage {
 
 	public void clickDeleteAccountButton() {
 		this.deleteAccountLink.click();
+	}
+	
+	public void clickTestCaseLink() {
+		this.testCaseLink.click();
 	}
 
 	public boolean checkUserLoginStatus(String userString) {
