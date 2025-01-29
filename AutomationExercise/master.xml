@@ -6,10 +6,13 @@
   <test name="Test">
   	<parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TestCase1_RegisterUser"/>
+<!--      <class name="testCases.TestCase1_RegisterUser"/>
       <class name="testCases.TestCase3_LoginWithIncorrectCreds"/>
       <class name="testCases.TestCase4_LogoutUser"/>
       <class name="testCases.TestCase5_RegisterUserWithExistingEmail"/>
+      <class name="testCases.TestCase6_ContactUsForm" />-->
+<!--      <class name="testCases.TestCase7_VerifyTestCasesPage" />-->
+      <class name="testCases.TestCase8_VerifyAllProductsAndProductDetailPage" />
     </classes>
   </test>
   

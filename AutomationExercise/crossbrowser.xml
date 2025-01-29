@@ -10,6 +10,7 @@
       <class name="testCases.TestCase3_LoginWithIncorrectCreds"/>
       <class name="testCases.TestCase4_LogoutUser"/>
       <class name="testCases.TestCase5_RegisterUserWithExistingEmail"/>
+      <class name="testCases.TestCase6_ContactUsForm" />
     </classes>
   </test>
   
@@ -20,6 +21,7 @@
       <class name="testCases.TestCase3_LoginWithIncorrectCreds"/>
       <class name="testCases.TestCase4_LogoutUser"/>
       <class name="testCases.TestCase5_RegisterUserWithExistingEmail"/>
+      <class name="testCases.TestCase6_ContactUsForm" />
     </classes>
   </test>
   
