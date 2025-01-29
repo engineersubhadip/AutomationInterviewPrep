@@ -2,7 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="MasterSuite" thread-count="2" parallel="tests">
-
+	
+	<listeners>
+		<listener class-name="utilities.ExtentReportManager"/>
+	</listeners>
+	
   <test name="ChromeTest">
   	<parameter name="browser" value="chrome"/>
     <classes>
@@ -22,6 +26,8 @@
       <class name="testCases.TestCase4_LogoutUser"/>
       <class name="testCases.TestCase5_RegisterUserWithExistingEmail"/>
       <class name="testCases.TestCase6_ContactUsForm" />
+      <class name="testCases.TestCase7_VerifyTestCasesPage" />
+      <class name="testCases.TestCase8_VerifyAllProductsAndProductDetailPage" />
     </classes>
   </test>
   
