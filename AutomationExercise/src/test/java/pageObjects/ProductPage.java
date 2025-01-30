@@ -59,8 +59,6 @@ public class ProductPage extends BasePage {
 		}
 		for (int i=0; i<productName.size(); i++) {
 			String currName = productName.get(i).getText();
-			System.out.println(productName.size());
-			System.out.println("current_name: "+currName+" ref_name: "+refName);
 			if (currName.toLowerCase().contains(refName.toLowerCase())) {
 				continue;
 			} else {
