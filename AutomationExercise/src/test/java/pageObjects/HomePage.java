@@ -1,13 +1,18 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
-
+	
+	private JavascriptExecutor js;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
+		js = (JavascriptExecutor)driver;
 	}
 
 	@FindBy(xpath = "//a[contains(text(),'Signup')]")
@@ -30,7 +35,23 @@ public class HomePage extends BasePage {
 	
 	@FindBy(xpath="//ul[contains(@class,'navbar')]//a[contains(@href,'products')]")
 	WebElement productLink;
-
+	
+	@FindBy(id="footer")
+	WebElement footerSection;
+	
+	@FindBy(xpath="//footer[@id='footer'] //h2")
+	WebElement subscriptionText;
+	
+	@FindBy(id="susbscribe_email")
+	WebElement subscribeEmail;
+	
+	@FindBy(id="subscribe")
+	WebElement subscribeButton;
+	
+	By subscriptionAlertLoc = By.xpath("//div[@id='success-subscribe']/div");
+	@FindBy(xpath="//div[@id='success-subscribe']/div")
+	WebElement subscriptionAlert;
+	
 	public void clickContactUsLink() {
 		this.contactUsLink.click();
 	}
@@ -63,5 +84,35 @@ public class HomePage extends BasePage {
 			return true;
 		}
 		return false;
+	}
+
+	public void scrollToFooter() {
+		js.executeScript("footer.scrollIntoView()");
+	}
+	
+	public boolean checkSubscriptionText() {
+		return subscriptionText.isDisplayed();
+	}
+	
+	public void enterSubscriptionEmail(String email) {
+		this.subscribeEmail.sendKeys(email);
+	}
+	
+	public void clickSubscribeButton() {
+		this.subscribeButton.click();
+	}
+	
+	public boolean checkSubscriptionAlertText(String userText) {
+		try {
+			waitForElementToAppear(subscriptionAlertLoc);
+			String currText = subscriptionAlert.getText();
+			if (currText.equalsIgnoreCase(userText)) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }
