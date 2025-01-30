@@ -26,7 +26,7 @@ public class ProductPage extends BasePage {
 	List<WebElement> productList;
 	
 	By productNameLoc = By.xpath("//div[@class='features_items']/div[@id='cartModal']/following-sibling::div //div[@class='single-products'] //p");
-	@FindBy(xpath="//div[@class='features_items']/div[@id='cartModal']/following-sibling::div //div[@class='single-products'] //p")
+	@FindBy(xpath="//div[@class='features_items']/div[@id='cartModal']/following-sibling::div //div[contains(@class,'productinfo')] //p")
 	List<WebElement> productName;
 	
 	
@@ -54,13 +54,17 @@ public class ProductPage extends BasePage {
 		try {
 			waitForElementToAppear(productNameLoc);
 		} catch (Exception e) {
+			System.out.println("Coming here !");
 			return false;
 		}
 		for (int i=0; i<productName.size(); i++) {
 			String currName = productName.get(i).getText();
+			System.out.println(productName.size());
+			System.out.println("current_name: "+currName+" ref_name: "+refName);
 			if (currName.toLowerCase().contains(refName.toLowerCase())) {
 				continue;
 			} else {
+				System.out.println("Culprit: "+currName);
 				return false;
 			}
 		}
