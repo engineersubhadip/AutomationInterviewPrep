@@ -7,12 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
-	
-	private JavascriptExecutor js;
-	
+
 	public HomePage(WebDriver driver) {
 		super(driver);
-		js = (JavascriptExecutor)driver;
 	}
 
 	@FindBy(xpath = "//a[contains(text(),'Signup')]")
@@ -86,33 +83,5 @@ public class HomePage extends BasePage {
 		return false;
 	}
 
-	public void scrollToFooter() {
-		js.executeScript("footer.scrollIntoView()");
-	}
 	
-	public boolean checkSubscriptionText() {
-		return subscriptionText.isDisplayed();
-	}
-	
-	public void enterSubscriptionEmail(String email) {
-		this.subscribeEmail.sendKeys(email);
-	}
-	
-	public void clickSubscribeButton() {
-		this.subscribeButton.click();
-	}
-	
-	public boolean checkSubscriptionAlertText(String userText) {
-		try {
-			waitForElementToAppear(subscriptionAlertLoc);
-			String currText = subscriptionAlert.getText();
-			if (currText.equalsIgnoreCase(userText)) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (Exception e) {
-			return false;
-		}
-	}
 }
