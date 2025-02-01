@@ -29,6 +29,17 @@ public class ProductPage extends BasePage {
 	@FindBy(xpath="//div[@class='features_items']/div[@id='cartModal']/following-sibling::div //div[contains(@class,'productinfo')] //p")
 	List<WebElement> productName;
 	
+	By productAddToCartLoc = By.xpath("//div[@class='product-image-wrapper']/div[1]/div[1] //a[contains(@class,'add-to-cart')]");
+	@FindBy(xpath="//div[@class='product-image-wrapper']/div[1]/div[1] //a[contains(@class,'add-to-cart')]")
+	List<WebElement> productAddToCart;
+	
+	By continueShoppingButtonLoc = By.xpath("//div[@id='cartModal'] //button");
+	@FindBy(xpath="//div[@id='cartModal'] //button")
+	WebElement continueShoppingButton;
+	
+	By viewCartPopUpLoc = By.xpath("//div[@id='cartModal'] //a[contains(@href,'view_cart')]");
+	@FindBy(xpath="//div[@id='cartModal'] //a[contains(@href,'view_cart')]")
+	WebElement viewCartPopUp;
 	
 	public void searchDesiredProduct(String item) {
 		this.searchProduct.sendKeys(item);
@@ -45,7 +56,7 @@ public class ProductPage extends BasePage {
 	public void clickViewProduct(int count) {
 		if (productList.size() > 0 && count < productList.size()) {
 			List<WebElement> product = driver.findElements(By.xpath("//div[@class='features_items'] //div[@class='product-image-wrapper'] //a[contains(@href,'product_details')]"));
-			WebElement target = product.get(count);
+			WebElement target = product.get(count-1);
 			js.executeScript("arguments[0].click()", target);
 		}
 	}
@@ -54,7 +65,6 @@ public class ProductPage extends BasePage {
 		try {
 			waitForElementToAppear(productNameLoc);
 		} catch (Exception e) {
-			System.out.println("Coming here !");
 			return false;
 		}
 		for (int i=0; i<productName.size(); i++) {
@@ -62,11 +72,47 @@ public class ProductPage extends BasePage {
 			if (currName.toLowerCase().contains(refName.toLowerCase())) {
 				continue;
 			} else {
-				System.out.println("Culprit: "+currName);
 				return false;
 			}
 		}
 		return true;
 	}
-
+	
+	private String captureProductAddedToCart(WebElement target) {
+		String result =  target.findElement(By.xpath("./parent::div[contains(@class,'productinfo')]/p")).getText();
+		result = result.trim();
+		return result;
+	}
+	
+	public String clickAddToCart(int count) throws IllegalAccessException {
+		if (count > productAddToCart.size()) {
+			throw new IllegalAccessException();
+		}
+		try {
+			waitForElementToAppear(productAddToCartLoc);
+			WebElement targetProduct = productAddToCart.get(count-1);
+			js.executeScript("arguments[0].click()", targetProduct);
+			return captureProductAddedToCart(targetProduct);
+		} catch (Exception e) {
+			throw new IllegalAccessException();
+		}
+	}
+	
+	public void clickContinueShoppingButton() throws IllegalAccessException {
+		try {
+			waitForElementToAppear(continueShoppingButtonLoc);
+			continueShoppingButton.click();
+		} catch (Exception e) {
+			throw new IllegalAccessException();
+		}
+	}
+	
+	public void clickViewCartFromPopUp() throws IllegalAccessException {
+		try {
+			waitForElementToAppear(viewCartPopUpLoc);
+			this.viewCartPopUp.click();
+		} catch  (Exception e) {
+			throw new IllegalAccessException();
+		}
+	}
 }
